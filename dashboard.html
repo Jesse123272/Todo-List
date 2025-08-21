@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Information - Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Member Information</h2>
+    <ul>
+        <li id="nav-dashboard">Dashboard</li>
+        <li id="nav-members">Members</li>
+        <li id="nav-payment">Payments</li>
+        <li id="toggle-dark">Dark Mode</li>
+        <li id="logout">Logout</li>
+    </ul>
+</div>
+
+<div class="main">
+    <!-- Dashboard -->
+    <div id="dashboard-section">
+        <h2 id="greeting">Welcome!</h2>
+        <div class="cards">
+            <div class="card">Total Members: <span id="total-members">0</span></div>
+            <div class="card">Total Payments: <span id="total-payments">0</span></div>
+        </div>
+    </div>
+
+    <!-- Members Section -->
+    <div id="members-section" class="hidden">
+        <div class="members-header">
+            <input type="text" id="member-search" placeholder="Search Members">
+            <button id="member-search-btn" class="btn-primary">Search</button>
+            <select id="member-sort">
+                <option value="">Sort By</option>
+                <option value="name">Name</option>
+                <option value="dob">Date of Birth</option>
+                <option value="joined">Date Joined</option>
+                <option value="desc">Description</option>
+            </select>
+            <button id="show-add-member" class="btn-primary">Add Member</button>
+        </div>
+        <ul id="members-list"></ul>
+
+        <!-- Add Member Form -->
+        <div id="add-member-form" class="hidden form-popup">
+            <h3>Add Member</h3>
+            <input type="text" id="member-name" placeholder="Name">
+            <input type="date" id="member-dob" placeholder="Date of Birth">
+            <input type="text" id="member-desc" placeholder="Description">
+            <div style="margin-top:10px;">
+                <button id="add-member" class="btn-success">Submit</button>
+                <button id="cancel-member" class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payments Section -->
+    <div id="payment-section" class="hidden">
+        <div class="payment-header">
+            <input type="text" id="payment-search" placeholder="Search Payments">
+            <button id="payment-search-btn" class="btn-primary">Search</button>
+            <select id="payment-sort">
+                <option value="">Sort By</option>
+                <option value="name">Name</option>
+                <option value="amount">Amount</option>
+            </select>
+            <button id="show-add-payment" class="btn-primary">Add Payment</button>
+        </div>
+        <ul id="payment-list"></ul>
+
+        <!-- Add Payment Form -->
+        <div id="add-payment-form" class="hidden form-popup">
+            <h3>Add Payment</h3>
+            <input type="text" id="payment-name" placeholder="Name">
+            <input type="number" id="payment-amount" placeholder="Amount Paid">
+            <input type="text" id="payment-desc" placeholder="Description">
+            <select id="payment-method">
+                <option value="">Select Method</option>
+                <option value="MTN">📱 MTN</option>
+                <option value="Telecel">📱 Telecel</option>
+                <option value="AT">📱 AT</option>
+                <option value="Bank Transfer">🏦 Bank Transfer</option>
+                <option value="Card">💳 Card</option>
+            </select>
+            <div style="margin-top:10px;">
+                <button id="add-payment" class="btn-success">Submit</button>
+                <button id="cancel-payment" class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
