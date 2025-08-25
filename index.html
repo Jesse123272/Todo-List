@@ -15,7 +15,12 @@
         <input type="text" id="signin-username" placeholder="Username">
         <input type="email" id="signin-email" placeholder="Email">
         <input type="password" id="signin-password" placeholder="Password">
-        <label><input type="checkbox" id="remember-me"> Remember Me</label>
+        <div class="checkbox-row">
+            <label class="checkbox-label">
+                <input type="checkbox" id="remember-me">
+                Remember Me
+            </label>
+        </div>
         <button id="signin-btn" class="btn-primary">Sign In</button>
         <p>Don't have an account? <span id="show-signup">Sign Up</span></p>
     </div>
@@ -27,7 +32,12 @@
         <input type="email" id="signup-email" placeholder="Email">
         <input type="password" id="signup-password" placeholder="Password">
         <input type="password" id="signup-confirm" placeholder="Confirm Password">
-        <label><input type="checkbox" id="signup-checkbox"> Agree to Terms</label>
+        <div class="checkbox-row">
+            <label class="checkbox-label">
+                <input type="checkbox" id="signup-checkbox">
+                Agree to Terms
+            </label>
+        </div>
         <button id="signup-btn" class="btn-primary">Sign Up</button>
         <p>Already have an account? <span id="show-signin">Sign In</span></p>
     </div>

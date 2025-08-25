@@ -71,9 +71,28 @@ body {
 .checkbox-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-    margin: 10px 0;
+    justify-content: flex-start; /* Left align */
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Reduce gap for closer look */
+    font-size: 0.98em;
+    cursor: pointer;
+    margin: 0;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0 4px 0 0; /* Remove extra right margin */
+    accent-color: #2575fc;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 }
 
 .auth-box button {
@@ -135,33 +154,138 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 10px;
-    gap: 5px;
+    gap: 12px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(37,117,252,0.07), 0 1.5px 6px rgba(106,17,203,0.04);
+    padding: 18px 20px 14px 20px;
+    margin-bottom: 18px;
+    border: 1.5px solid #e3e8f0;
 }
 
-#members-list li, #payment-list li {
-    padding: 5px;
-    margin: 5px 0;
-    background: #e0e0e0;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.members-header input,
+.payment-header input,
+.members-header select,
+.payment-header select {
+    border: 1.2px solid #bfc9d8;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 1em;
+    background: #f7faff;
+    transition: border 0.2s;
+    outline: none;
+    min-width: 160px;
 }
 
-#members-list li span, #payment-list li span {
-    cursor: pointer;
-    margin-left: 5px;
+.members-header input:focus,
+.payment-header input:focus,
+.members-header select:focus,
+.payment-header select:focus {
+    border: 1.5px solid #2575fc;
+    background: #f0f6ff;
+}
+
+.members-header button,
+.payment-header button {
+    margin: 0 4px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 700px) {
+    .members-header, .payment-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 14px 8px;
+    }
+    .members-header input,
+    .payment-header input,
+    .members-header select,
+    .payment-header select {
+        min-width: 0;
+        width: 100%;
+    }
 }
 
 /* --- FORM POPUP --- */
 .form-popup {
-    background: #57a5d3;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(45, 122, 160, 0.925);
-    width: 300px;
-    margin: 10px 0;
+    background: #fff;
+    padding: 28px 24px 18px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(37,117,252,0.13), 0 1.5px 6px rgba(106,17,203,0.08);
+    width: 340px;
+    margin: 18px auto;
+    position: relative;
+    border: 1.5px solid #e3e8f0;
+    transition: box-shadow 0.2s;
+}
+
+.form-popup h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #2575fc;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.form-popup input,
+.form-popup select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 10px 0 16px 0;
+    border-radius: 7px;
+    border: 1.2px solid #bfc9d8;
+    background: #f7faff;
+    font-size: 1em;
+    transition: border 0.2s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-popup input:focus,
+.form-popup select:focus {
+    border: 1.5px solid #2575fc;
+    background: #f0f6ff;
+}
+
+.form-popup button {
+    width: 48%;
+    padding: 10px 0;
+    font-size: 1em;
+    margin: 0 1% 0 0;
+    border-radius: 6px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.form-popup .btn-success {
+    background: linear-gradient(90deg,#2575fc,#6a11cb);
+    color: #fff;
+    font-weight: 600;
+}
+
+.form-popup .btn-cancel {
+    background: #e0e0e0;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-popup .btn-success:hover {
+    background: linear-gradient(90deg,#6a11cb,#2575fc);
+}
+
+.form-popup .btn-cancel:hover {
+    background: #d32f2f;
+    color: #fff;
+}
+
+@media (max-width: 500px) {
+    .form-popup {
+        width: 95vw;
+        padding: 16px 5vw;
+    }
 }
 
 /* --- DARK MODE --- */
