@@ -44,6 +44,14 @@ if(signupBtn){
         users.push({username,email,password});
         localStorage.setItem('users', JSON.stringify(users));
         alert("Sign up successful! Please Sign In.");
+
+        // Clear sign up form fields
+        document.getElementById('signup-username').value = '';
+        document.getElementById('signup-email').value = '';
+        document.getElementById('signup-password').value = '';
+        document.getElementById('signup-confirm').value = '';
+        document.getElementById('signup-checkbox').checked = false;
+
         document.getElementById('signup-box').classList.add('hidden');
         document.getElementById('signin-box').classList.remove('hidden');
     });
@@ -66,6 +74,12 @@ if(signinBtn){
 
         let user = users.find(u => u.username === username && u.email === email && u.password === password);
         if(user){
+            // Clear sign in form fields
+            document.getElementById('signin-username').value = '';
+            document.getElementById('signin-email').value = '';
+            document.getElementById('signin-password').value = '';
+            document.getElementById('remember-me').checked = false;
+
             localStorage.setItem('currentUser', username);
             window.location.href='dashboard.html';
         } else{
