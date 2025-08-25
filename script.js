@@ -178,6 +178,11 @@ if (addMemberBtn && addMemberForm) {
         }
         localStorage.setItem('members', JSON.stringify(members));
         addMemberForm.classList.add('hidden');
+        // Clear form fields
+        document.getElementById('member-name').value = '';
+        document.getElementById('member-dob').value = '';
+        document.getElementById('member-desc').value = '';
+        selectedMemberIndex = null;
         renderMembers();
         updateDashboardStats();
     });
@@ -263,6 +268,12 @@ if (addPaymentBtn && addPaymentForm) {
         }
         localStorage.setItem('payments', JSON.stringify(payments));
         addPaymentForm.classList.add('hidden');
+        // Clear form fields
+        document.getElementById('payment-name').value = '';
+        document.getElementById('payment-amount').value = '';
+        document.getElementById('payment-desc').value = '';
+        document.getElementById('payment-method').value = '';
+        selectedPaymentIndex = null;
         renderPayments();
         updateDashboardStats();
     });
